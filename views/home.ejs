@@ -1,0 +1,17 @@
+<%- include('./partials/head') -%>
+
+<body>
+    <h1>Hola <%= usuario.nombre%> <%=usuario.apellido %>, bienvenido a mi página web</h1> 
+   
+
+     <ul>
+        <% articulos.forEach((articulo) =>{ %>
+            <li>
+                <h2><%= articulo.title %></h2>
+                <p><%= articulo.body %></p>
+            </li>
+            <hr>
+            <% }) %>
+     </ul>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<%- include('./partials/head') -%>
+
+<ul>
+    <% products.forEach((producto) =>{ %>
+        <li>
+            <h2><%= producto.name %></h2>
+            <p><%= producto.company %></p>
+            <p><%= producto.price %>$</p>
+        </li>
+        <hr>
+        <% }) %>
+ </ul>
+ 
