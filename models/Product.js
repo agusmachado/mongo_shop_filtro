@@ -28,8 +28,7 @@ const productSchema = new mongoose.Schema({
         values:['ikea', 'liddy', 'caressa', 'marcos'],
         message:'{value} no tiene stock'
         }
-    }
-    
+    },    
 })
 
 module.exports = mongoose.model('Product', productSchema)

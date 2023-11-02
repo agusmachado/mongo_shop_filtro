@@ -9,6 +9,12 @@ require('express-async-errors')
 const connectDB = require('./db/conexion')
 const productsRouter = require('./routes/products')
 
+// Creo el middleware que me lee el json para que, después, lo traduzca el express.json()
+app.use(express.urlencoded({ extended: true}))
+
+// Creo el middleware que me transforma los json que me llegan desde los formularios a objeto
+app.use(express.json())
+
 app.set('view engine', 'ejs')
 
 // PROBAMOS 1- Pasar datos de usuario al body del home
@@ -36,8 +42,7 @@ app.get('/', (req, res) => {
     //res.render('home', {usuario:usuario})
 
     // TRAEMOS - PROBAMOS 2 - Pasamos datos los datos del usuario y  del array al body
-   // res.render('home', {usuario:usuario, articulos:posts})
-   res.render('home')
+   res.render('home', {usuario:usuario, articulos:posts})   
 });
 
 

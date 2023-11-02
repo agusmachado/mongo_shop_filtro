@@ -2,7 +2,12 @@
 
 <body>
     <h1>Hola <%= usuario.nombre%> <%=usuario.apellido %>, bienvenido a mi página web</h1> 
-   
+    
+    <form action="/pepe/search" method="GET">
+        <input type="text" name="keyword" placeholder="Buscar por palabra clave">
+        <button type="submit">Buscar</button>
+    </form>
+    
 
      <ul>
         <% articulos.forEach((articulo) =>{ %>
