@@ -3,10 +3,24 @@
 <body>
     <h1>Hola <%= usuario.nombre%> <%=usuario.apellido %>, bienvenido a mi página web</h1> 
     
+    
     <form action="/pepe/search" method="GET">
         <input type="text" name="keyword" placeholder="Buscar por palabra clave">
         <button type="submit">Buscar</button>
+    
+        <!-- Campos ocultos para precio mínimo y máximo -->
+        <input type="hidden" name="minPrice" value="">
+        <input type="hidden" name="maxPrice" value="">
+    
+        <!-- Botones para seleccionar rangos de precios -->
+        <button type="button" onclick="setPriceRange(0, 10)">Menos de $10</button>
+        <button type="button" onclick="setPriceRange(10, 25)">$10 - $25</button>
+        <button type="button" onclick="setPriceRange(25, 50)">$25 - $50</button>
+        <button type="button" onclick="setPriceRange(50, 100)">$50 - $100</button>
+        
+        <button type="submit">Buscar</button>
     </form>
+    
     
 
      <ul>
@@ -18,5 +32,13 @@
             <hr>
             <% }) %>
      </ul>
+
+     <script>
+           function setPriceRange(min, max) {
+                document.querySelector('[name="minPrice"]').value = min;
+                document.querySelector('[name="maxPrice"]').value = max;
+            }
+
+     </script>
 </body>
 </html>
