@@ -75,6 +75,23 @@ router.get('/search', async (req, res) => {
 });
 
 
+// Ruta para mostrar detalles de un producto por su _id
+router.get('/:id', async (req, res) => {
+    try {
+      const productId = req.params.id; // Obtiene el ID del producto desde los parámetros de la URL
+      const product = await Product.findById(productId);
+      if (!product) {
+        return res.status(404).send('Producto no encontrado');
+      }
+      res.render('productDetails', { product });
+    } catch (error) {
+      res.status(500).json({ error: 'Error en el servidor.' });
+    }
+});
+
+
+
+
 
 
 

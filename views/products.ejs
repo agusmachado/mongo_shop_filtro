@@ -1,15 +1,16 @@
 <%- include('./partials/head') -%>
 
-
 <ul>
     <% products.forEach((producto) =>{ %>
         <li>
             <h2><%= producto.name %></h2>
             <p><%= producto.company %></p>
             <p><%= producto.price %>$</p>
+            <a href="/pepe/<%= producto._id %>">Ver Detalles</a> <!-- Cambia la URL aquí -->
         </li>
         <hr>
-        <% }) %>
- </ul>
+    <% }) %>
+</ul>
+
 
   
